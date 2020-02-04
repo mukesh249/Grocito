@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data></data>
+
+    <LinearLayout
+        android:background="@drawable/grey_rounded_radius"
+        android:layout_margin="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:id="@+id/SelectAddrIv"
+                android:padding="2dp"
+                android:layout_alignParentStart="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/checked"/>
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/SelectAddrIv"
+                android:id="@+id/deleteIv"
+                android:padding="2dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/delete"/>
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/editIcon"
+                android:padding="2dp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/edit"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/addrtype"
+            android:text="@string/home"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/addressTv"
+            android:text="2/24, Chitrakot-B Vashali nager, near chitrakot jaipur(302021)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+</layout>

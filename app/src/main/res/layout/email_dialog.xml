@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="@dimen/_20sdp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Email"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_light_radius_pri"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:text="Pr7vhu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/referCodeTv"/>
+            <TextView
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/border_light_radius_pri"
+                android:layout_alignParentEnd="true"
+                android:text="@string/copy_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/copyUrlTv"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="17sp"
+            android:text="@string/email_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:padding="@dimen/_7sdp"
+            android:background="@drawable/border_light_radius_pri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_address"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="17sp"
+            android:text="@string/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/messageEt"
+            android:padding="@dimen/_7sdp"
+            android:background="@drawable/border_light_radius_pri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/message"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_toStartOf="@+id/sendBtn"
+                android:text="@string/close"
+                android:textAllCaps="false"
+                android:id="@+id/closeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textAllCaps="false"
+                android:layout_alignParentEnd="true"
+                android:text="@string/send"
+                android:id="@+id/sendBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

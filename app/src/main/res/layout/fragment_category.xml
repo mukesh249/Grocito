@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.Category">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/dsaf"
+            android:padding="@dimen/_7sdp"
+            style="@style/large_txtView"
+            android:text="@string/shop_by_cat" />
+        <View
+            android:id="@+id/line"
+            android:layout_below="@+id/dsaf"
+            android:background="@color/md_grey_400"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+        <com.wang.avi.AVLoadingIndicatorView
+            android:visibility="gone"
+            android:id="@+id/matrial_Progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:indicator="LineScale"
+            app:indicator_color="@color/colorPrimaryDark" />
+        <ExpandableListView
+            android:layout_below="@+id/line"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:id="@+id/expandableList">
+        </ExpandableListView>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+<!--    <androidx.cardview.widget.CardView app:cardCornerRadius="@dimen/_5sdp"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardElevation="4dp"-->
+<!--        android:layout_margin="@dimen/_10sdp"-->
+<!--        >-->
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:elevation="6dp"
+            android:padding="@dimen/_10sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/product_image"
+                    android:src="@drawable/anim2"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_height="@dimen/_120sdp" />
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+</layout>

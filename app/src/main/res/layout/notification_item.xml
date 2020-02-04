@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/md_grey_200"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/newTv"
+                android:background="@drawable/new_back"
+                android:text="New"
+                android:textColor="@color/black"
+                android:paddingStart="@dimen/_15sdp"
+                android:padding="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_below="@+id/newTv"
+                android:id="@+id/noti_image"
+                android:src="@drawable/demoimage"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"/>
+
+            <LinearLayout
+                android:id="@+id/TopLL"
+                android:layout_above="@+id/dateTimeTv"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/noti_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/offer_name"
+                    style="@style/meadium_txtView"
+                    android:gravity="start"
+                    android:textColor="@color/md_red_700"
+                    android:text=""
+                    />
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text=""/>
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/dateTimeTv"
+                    android:text="25-2-2019 5:00PM"
+                    android:textColor="@color/gray"
+                    android:layout_below="@+id/noti_image"
+                    style="@style/x_small_txtView"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

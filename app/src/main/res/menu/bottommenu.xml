@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_btm"
+            android:icon="@drawable/home_icon"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/category_btm"
+            android:icon="@drawable/category"
+            android:title="@string/categories" />
+        <item
+            android:visible="false"
+            android:id="@+id/offer_btm"
+            android:icon="@drawable/sell"
+            android:title="@string/offers" />
+        <item
+            android:id="@+id/cart_btm"
+            android:icon="@drawable/cart"
+            android:title="@string/cart" />
+    </group>
+
+</menu>

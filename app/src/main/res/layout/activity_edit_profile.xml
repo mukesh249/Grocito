@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.EditProfile">
+
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/header_layout"
+            android:id="@+id/headlyaout"/>
+
+        <LinearLayout
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Name*"/>
+
+            <EditText
+                android:padding="10dp"
+                android:background="@drawable/border_light_radius_pri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/firstNameEt"
+                android:singleLine="true"
+                android:hint="@string/enter_first_name"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:text="Last Name*"/>
+            <EditText
+                android:id="@+id/lastNameEt"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_light_radius_pri"
+                android:hint="@string/enter_last_name"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email*"
+                android:textSize="15sp"
+                android:padding="5dp"/>
+
+            <EditText
+                android:id="@+id/emailEt"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_id"
+                android:background="@drawable/border_light_radius_pri"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/round_conner_primary"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:text="@string/update"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</layout>

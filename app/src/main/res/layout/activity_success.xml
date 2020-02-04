@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data></data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".activities.Success">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/waitTv"
+            style="@style/small_txtView"
+            android:padding="@dimen/_50sdp"
+            android:text="@string/please_wait_n_don_t_press_back_button_and_cancel"
+            android:textColor="@color/gray" />
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/matrial_Progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:indicator="LineScale"
+            app:indicator_color="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/successLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/orderIv"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_margin="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/orderStatusTv"
+                style="@style/large_txtView"
+                android:text="@string/success_order"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/orderdesTv"
+                style="@style/small_txtView"
+                android:text="Your order placed succesfully for more details check my order page your Order ID is "
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/orderIdTv"
+                style="@style/large_txtView"
+                android:text="#oder2342"
+                android:textColor="@color/gray" />
+
+            <TextView
+                style="@style/large_txtView"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/thank_you_for_shoping"
+                android:textColor="@color/gray"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/continueshopBtn"
+                style="@style/button_light_radius"
+                android:layout_margin="@dimen/_35sdp"
+                android:drawableEnd="@drawable/right_arrow"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/continue_shopping" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

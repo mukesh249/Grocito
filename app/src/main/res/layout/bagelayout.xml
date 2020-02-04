@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/counterTv"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/roundshape_pri"
+            android:gravity="center"
+            android:padding="3dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp" />
+</layout>

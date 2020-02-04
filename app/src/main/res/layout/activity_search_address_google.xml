@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.SearchAddressGoogle">
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/white_round"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_3sdp">
+
+            <ImageView
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_centerVertical="true"
+                android:id="@+id/search_icon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/search" />
+
+            <EditText
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/search_icon"
+                android:layout_toStartOf="@+id/endF"
+                android:id="@+id/searchEditText"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/search_for_products"
+                android:textSize="14sp" />
+            <FrameLayout
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/endF"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp">
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_gravity="center"
+                    android:id="@+id/progress"
+                    android:visibility="invisible"
+                    android:padding="4dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:indicator="BallScale"
+                    app:indicator_color="@color/colorPrimaryDark" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:padding="4dp"
+                    android:id="@+id/cancel_bt"
+                    android:visibility="gone"
+                    android:src="@drawable/places_ic_clear" />
+            </FrameLayout>
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/google_address_item"
+            />
+    </LinearLayout>
+
+</layout>

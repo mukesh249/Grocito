@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.grocito.grocito"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.chaos.view:pinview:1.4.3'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+    //Volley
+    implementation 'com.android.volley:volley:1.1.1'
+    //Okhhtpp3
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:3.0.3'
+
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation 'com.qhutch.elevationimageview:elevationimageview:2.4'
+
+    // Circle imageview
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    //Shadow ImageView
+    implementation 'com.yinglan.shadowimageview:shadowimageview:1.0.4'
+
+    //Horizontal Calendar
+    implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
+
+    //Horizontal Calendar
+    implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.1'
+    implementation 'com.github.jhonnyx2012:horizontal-picker:1.0.6'
+    //Expandable RecyclerView
+    implementation 'com.thoughtbot:expandablerecyclerview:1.3'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.1.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    //Firebase library
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-core:17.2.2'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:17.3.0'
+
+    implementation 'id.zelory:compressor:2.1.0'
+    implementation 'com.crystal:crystalrangeseekbar:1.1.3'
+    implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+    //Razorpay
+    implementation 'com.razorpay:checkout:1.5.12'
+    //Facebook library
+//    implementation 'com.facebook.android:facebook-login:100.1.1'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    //Lifecycle  components
+    def archLifecycleVersion = '1.1.1'
+    implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
+
+    implementation 'com.wang.avi:library:1.0.3'
+    implementation 'com.nineoldandroids:library:2.4.0'
+
+    //-----------------spots-dialog-------------
+    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+}
+apply plugin: 'com.google.gms.google-services'
