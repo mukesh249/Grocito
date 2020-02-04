@@ -119,7 +119,6 @@
                             android:textSize="12sp" />
                         <TextView
                             android:visibility="gone"
-                            android:padding="@dimen/_3sdp"
                             android:textStyle="bold"
                             android:id="@+id/reviewRatingTv"
                             android:layout_width="wrap_content"
@@ -131,7 +130,6 @@
                     </LinearLayout>
                     <TextView
                         android:visibility="visible"
-                        android:padding="@dimen/_3sdp"
                         android:id="@+id/statusTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

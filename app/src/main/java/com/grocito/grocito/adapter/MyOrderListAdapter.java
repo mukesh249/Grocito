@@ -78,6 +78,9 @@ public class MyOrderListAdapter extends RecyclerView.Adapter<MyOrderListAdapter.
         }else if (datum.status.equalsIgnoreCase("cancelled")){
             viewHolder.binding.orderStatusTv.setVisibility(View.VISIBLE);
             viewHolder.binding.orderStatusTv.setTextColor(context.getResources().getColor(R.color.red));
+        }else if (datum.status.equalsIgnoreCase("exchange")){
+            viewHolder.binding.orderStatusTv.setVisibility(View.VISIBLE);
+            viewHolder.binding.orderStatusTv.setTextColor(context.getResources().getColor(R.color.red));
         }else {
             viewHolder.binding.orderStatusTv.setVisibility(View.GONE);
         }

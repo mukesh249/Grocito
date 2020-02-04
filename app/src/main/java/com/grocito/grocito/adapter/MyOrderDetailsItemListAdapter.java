@@ -129,15 +129,19 @@ public class MyOrderDetailsItemListAdapter extends RecyclerView.Adapter<MyOrderD
                 }
             }
         }
-        if (MyOrderDetails.current_date_millis > MyOrderDetails.shiped_date_mills) {
-            if (metaDatum.product!=null && metaDatum.product.isReturn == 1 && metaDatum.returnStatus != 1 && !MyOrderDetails.cancel && MyOrderDetails.orderotp) {
+//        if (MyOrderDetails.current_date_millis > MyOrderDetails.shiped_date_mills) {
+        if (metaDatum.product != null && metaDatum.product.isReturn == 1
+                && metaDatum.returnStatus != 1
+                && !metaDatum.status.equals("exchange")
+                && !MyOrderDetails.cancel && MyOrderDetails.orderotp
+                && !metaDatum.status.equals("delivered")) {
                 viewHolder.binding.returnTv.setVisibility(View.VISIBLE);
 //                    viewHolder.binding.exchangeTv.setVisibility(View.GONE);
             } else {
 //                viewHolder.binding.exchangeTv.setVisibility(View.GONE);
                 viewHolder.binding.returnTv.setVisibility(View.GONE);
             }
-        }
+//        }
 
         if (metaDatum.product!=null && metaDatum.product.productRating != null) {
             viewHolder.binding.ratingTv.setVisibility(View.VISIBLE);

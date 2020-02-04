@@ -5,11 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.grocito.grocito.R;
 import com.grocito.grocito.adapter.FilterBrandAdapter;
@@ -36,7 +37,7 @@ import java.util.List;
 
 import dmax.dialog.SpotsDialog;
 
-public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask {
+public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask, AdapterView.OnItemSelectedListener {
 
     private ActivitySeeAllProductBinding binding;
     private SeeAllProductAdapter allProductAdapter;
@@ -56,9 +57,9 @@ public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask 
         if (getIntent().getExtras() != null)
             binding.headlyaout.productCatName.setText(getIntent().getExtras().getString("name", ""));
 
-        binding.productRecyView.setLayoutManager(new LinearLayoutManager(this));
+        binding.productRecyView.setLayoutManager(new GridLayoutManager(this,2));
         MyApplication.RecyclerView(binding.productRecyView);
-        allProductAdapter = new SeeAllProductAdapter(this, arrayList);
+        allProductAdapter = new SeeAllProductAdapter(this, arrayList, this);
         binding.productRecyView.setAdapter(allProductAdapter);
         allProductAdapter.notifyDataSetChanged();
 
@@ -244,4 +245,17 @@ public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask 
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getId() == R.id.capcity_spinner) {
+            int poss = (int) parent.getTag();
+            arrayList.get(poss).selcted=position;
+          // allProductAdapter.notifyItemChanged(poss);
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
