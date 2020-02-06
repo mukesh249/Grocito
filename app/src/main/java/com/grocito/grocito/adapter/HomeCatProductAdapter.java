@@ -2,22 +2,22 @@ package com.grocito.grocito.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-
-import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.grocito.grocito.R;
 import com.grocito.grocito.activities.ProductDetail;
 import com.grocito.grocito.api.WebUrls;
-import com.grocito.grocito.R;
+import com.grocito.grocito.databinding.BavergesItemBinding;
 import com.grocito.grocito.model.HomeGsonModel;
 import com.grocito.grocito.utils.Utils;
-import com.grocito.grocito.databinding.BavergesItemBinding;
+
+import java.util.List;
 
 public class HomeCatProductAdapter extends RecyclerView.Adapter<HomeCatProductAdapter.ViewHolder> {
 
@@ -63,7 +63,7 @@ public class HomeCatProductAdapter extends RecyclerView.Adapter<HomeCatProductAd
 
             binding.getRoot().setOnClickListener(view -> context.startActivity(new Intent(context, ProductDetail.class)
                     .putExtra("product_slug",arrayList.get(getAdapterPosition()).pSlug)
-                    .putExtra("product_slug",arrayList.get(getAdapterPosition()).pSlug))
+                    .putExtra("name",arrayList.get(getAdapterPosition()).pName))
             );
         }
     }

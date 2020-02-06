@@ -63,7 +63,7 @@ public class MyOrderListAdapter extends RecyclerView.Adapter<MyOrderListAdapter.
         final MyOrderListModel.Datum datum = arrayList.get(i);
         viewHolder.binding.orderDateTv.setText(String.format("Date/Time: %s", datum.createdAt));
         viewHolder.binding.orderIdTv.setText(String.format("Order Id: %s", datum.orderId));
-        viewHolder.binding.orderItemNoTv.setText(String.format("No of Items: %s", datum.orderMetaData.size()));
+//        viewHolder.binding.orderItemNoTv.setText(String.format("No of Items: %s", datum.orderMetaData.size()));
 
         if (datum.status.equals("pending")){
             viewHolder.binding.cancelBt.setVisibility(View.VISIBLE);
@@ -85,7 +85,15 @@ public class MyOrderListAdapter extends RecyclerView.Adapter<MyOrderListAdapter.
             viewHolder.binding.orderStatusTv.setVisibility(View.GONE);
         }
         viewHolder.binding.orderStatusTv.setText(String.format("Order %s", Utils.FirstLatterCap(string)));
-        viewHolder.binding.orderAmtTv.setText(String.format("Total Amount: ₹%.0f", Double.parseDouble(datum.totalAmount)+datum.shippingCharge));
+
+        double total = Double.parseDouble(datum.totalAmount) - Double.parseDouble(datum.totalReturnAmount);
+        double delivchar;
+        if (datum.itemCount == datum.returnCount) {
+            delivchar = 0;
+        } else {
+            delivchar = datum.shippingCharge;
+        }
+        viewHolder.binding.orderAmtTv.setText(String.format("Total Amount: ₹%.0f", total + delivchar));
 
 
         viewHolder.binding.cancelBt.setOnClickListener(v -> {

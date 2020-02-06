@@ -12,7 +12,7 @@ public class SelectedSellerModel {
 
         @SerializedName("item_data")
         @Expose
-        public List<SeeAllProductsModel.ProductPriceDatum> itemData = null;
+        public List<SeeAllProductsModel> itemData = null;
         @SerializedName("schemeName")
         @Expose
         public String schemeName;

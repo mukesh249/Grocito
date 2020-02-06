@@ -432,6 +432,7 @@ public class HomeFragment extends Fragment implements WebCompleteTask {
                             startActivity(new Intent(getActivity(), SeeAllProduct.class)
                                     .putExtra("cat_id", homeGsonModel.data.isSpecial.id + "")
                                     .putExtra("subCatId", "")
+                                    .putExtra("name", homeGsonModel.data.isSpecial.name)
                             );
                         }
                     });

@@ -150,6 +150,7 @@ public class MyOrderDetails extends AppCompatActivity implements WebCompleteTask
     public void userOrderTracking() {
         HashMap objectNew = new HashMap();
         objectNew.put("order_id", order_id);
+        Log.i("userOrderTracking_obj", objectNew + "");
         new WebTask(this, WebUrls.BASE_URL + WebUrls.UserOrderTracking, objectNew,
                 MyOrderDetails.this, RequestCode.CODE_UserOrderTracking, 5);
     }
@@ -265,6 +266,7 @@ public class MyOrderDetails extends AppCompatActivity implements WebCompleteTask
                 binding.paymentOptionTv.setText(String.format("Payment Mode : %s", orderListModel.data.paymentMode));
 
                 if (orderListModel.data.paymentStatus.equals("faild")) {
+                    binding.orderTrackLL.setVisibility(View.GONE);
                     binding.paymentStatusTv.setTextColor(getResources().getColor(R.color.red));
                     binding.paymentStatusTv.setText(String.format("Payment Status : %s", "Failed"));
                 } else {
@@ -288,7 +290,9 @@ public class MyOrderDetails extends AppCompatActivity implements WebCompleteTask
                 }
                 binding.deliveryChargeTv.setText(String.format("₹%.0f", delivery_charge));
                 double total = subAmt + delivery_charge;
-                binding.totalTv.setText(String.format("₹%.0f", total));
+                binding.totalAmtTv.setText(String.format("₹%.0f", total));
+                binding.wtAmtTv.setText(String.format("-₹%.0f", orderListModel.data.walletAmount));
+                binding.paytotalTv.setText(String.format("₹%.0f",total - orderListModel.data.walletAmount));
                 if (orderListModel.data.address != null) {
                     if (orderListModel.data.address.name != null)
                         binding.nameTv.setText(String.format("%s \n%s", orderListModel.data.address.name, orderListModel.data.address.mobile));
@@ -359,30 +363,6 @@ public class MyOrderDetails extends AppCompatActivity implements WebCompleteTask
                         delivered(userOrderTrack.data.get(i).date);
                     }
                 }
-//                if (userOrderTrack.data.size() == 1) {
-//                    Log.i("order_type", userOrderTrack.data.get(0).type);
-//                    Log.i("order_date", userOrderTrack.data.get(0).date);
-//                    placed(userOrderTrack.data.get(0).date);
-//                } else if (userOrderTrack.data.size() == 2) {
-//                    placed(userOrderTrack.data.get(0).date);
-//                    accept(userOrderTrack.data.get(1).date);
-//                } else if (userOrderTrack.data.size() == 3) {
-//                    placed(userOrderTrack.data.get(0).date);
-//                    accept(userOrderTrack.data.get(1).date);
-//                    shipped(userOrderTrack.data.get(2).date);
-//                } else if (userOrderTrack.data.size() == 4) {
-//                    placed(userOrderTrack.data.get(0).date);
-//                    accept(userOrderTrack.data.get(1).date);
-//                    shipped(userOrderTrack.data.get(2).date);
-//                    onWay(userOrderTrack.data.get(3).date);
-////                    delivered(userOrderTrack.data.get(3).date);
-//                } else if (userOrderTrack.data.size() == 5) {
-//                    placed(userOrderTrack.data.get(0).date);
-//                    accept(userOrderTrack.data.get(1).date);
-//                    shipped(userOrderTrack.data.get(2).date);
-//                    onWay(userOrderTrack.data.get(3).date);
-//                    delivered(userOrderTrack.data.get(4).date);
-//                }
             }
         }
     }

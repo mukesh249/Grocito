@@ -1,24 +1,22 @@
 package com.grocito.grocito.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import java.util.List;
-
-import com.grocito.grocito.activities.ProductDetail;
+import com.grocito.grocito.R;
 import com.grocito.grocito.activities.SeeAllProduct;
 import com.grocito.grocito.api.WebUrls;
 import com.grocito.grocito.databinding.OtherItemBinding;
-import com.grocito.grocito.R;
 import com.grocito.grocito.model.HomeGsonModel;
 import com.grocito.grocito.utils.Utils;
+
+import java.util.List;
 
 public class OtherAdapter extends RecyclerView.Adapter<OtherAdapter.ViewHolder> {
 
@@ -46,8 +44,9 @@ public class OtherAdapter extends RecyclerView.Adapter<OtherAdapter.ViewHolder> 
         Utils.setImage(context,viewHolder.binding.productImage, WebUrls.BASE_URL+WebUrls.Catgory_Image_URL+isSpecialModel.image);
         viewHolder.binding.productImage.setOnClickListener(v ->
                 context.startActivity(new Intent(context, SeeAllProduct.class)
-                .putExtra("cat_id",isSpecialModel.categoryId+"")
-                .putExtra("subCatId",isSpecialModel.id+"")
+                        .putExtra("cat_id", isSpecialModel.categoryId + "")
+                        .putExtra("subCatId", isSpecialModel.id + "")
+                        .putExtra("name", isSpecialModel.name)
         ));
     }
 

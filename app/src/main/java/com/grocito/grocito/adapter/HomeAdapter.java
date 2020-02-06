@@ -10,13 +10,13 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import com.grocito.grocito.R;
 import com.grocito.grocito.activities.SeeAllProduct;
 import com.grocito.grocito.common.MyApplication;
 import com.grocito.grocito.databinding.HomeItemBinding;
 import com.grocito.grocito.model.HomeGsonModel;
+
+import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
@@ -67,6 +67,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 int pos = getAdapterPosition();
                 context.startActivity(new Intent(context, SeeAllProduct.class)
                         .putExtra("cat_id", arrayList.get(pos).catId+"")
+                        .putExtra("name",arrayList.get(pos).catName)
                 );
 
             });

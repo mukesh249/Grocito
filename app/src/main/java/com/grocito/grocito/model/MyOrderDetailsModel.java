@@ -121,7 +121,7 @@ public class MyOrderDetailsModel {
         public Integer extraAmount;
         @SerializedName("wallet_amount")
         @Expose
-        public Integer walletAmount;
+        public Double walletAmount;
         @SerializedName("net_amount")
         @Expose
         public String netAmount;

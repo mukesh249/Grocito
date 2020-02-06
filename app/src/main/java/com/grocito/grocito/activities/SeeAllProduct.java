@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -37,11 +36,12 @@ import java.util.List;
 
 import dmax.dialog.SpotsDialog;
 
-public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask, AdapterView.OnItemSelectedListener {
+public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask {
 
     private ActivitySeeAllProductBinding binding;
     private SeeAllProductAdapter allProductAdapter;
     private List<SeeAllProductsModel.ProductList> arrayList = new ArrayList<>();
+//    private List<SeeAllProductsModel.ProductList> arrayListDemo = new ArrayList<>();
     private String catid = "", subcatid = "", catName = "";
     private static SeeAllProduct mInstance;
     AlertDialog progressDialog;
@@ -59,9 +59,6 @@ public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask,
 
         binding.productRecyView.setLayoutManager(new GridLayoutManager(this,2));
         MyApplication.RecyclerView(binding.productRecyView);
-        allProductAdapter = new SeeAllProductAdapter(this, arrayList, this);
-        binding.productRecyView.setAdapter(allProductAdapter);
-        allProductAdapter.notifyDataSetChanged();
 
         binding.headlyaout.searchIcon.setOnClickListener(view -> startActivity(new Intent(SeeAllProduct.this, SearchItem.class)));
         FilterCatAdapter.cate_id = "";
@@ -178,14 +175,17 @@ public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask,
                 this.arrayList.addAll(seeAllProductsModel.data.productList);
                 binding.productRecyView.setVisibility(View.VISIBLE);
                 binding.emptyListLL.setVisibility(View.GONE);
-                if (!seeAllProductsModel.data.productList.isEmpty()) {
-                    binding.headlyaout.productCatName.setText(seeAllProductsModel.data.catdata.name);
-                    catName = seeAllProductsModel.data.catdata.name;
-                    allProductAdapter.notifyDataSetChanged();
-                } else {
-                    binding.productRecyView.setVisibility(View.GONE);
-                    binding.emptyListLL.setVisibility(View.VISIBLE);
-                }
+                allProductAdapter = new SeeAllProductAdapter(this, seeAllProductsModel.data.productList);
+                binding.productRecyView.setAdapter(allProductAdapter);
+//                allProductAdapter.notifyDataSetChanged();
+//                if (!seeAllProductsModel.data.productList.isEmpty()) {
+//                    binding.headlyaout.productCatName.setText(seeAllProductsModel.data.catdata.name);
+//                    catName = seeAllProductsModel.data.catdata.name;
+//                    allProductAdapter.notifyDataSetChanged();
+//                } else {
+//                    binding.productRecyView.setVisibility(View.GONE);
+//                    binding.emptyListLL.setVisibility(View.VISIBLE);
+//                }
             }
             Utils.ProgressHide(this, binding.matrialProgress, binding.productRecyView);
         }
@@ -204,10 +204,13 @@ public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask,
                         binding.headlyaout.productCatName.setText(getString(R.string.grocito_exclusive));
                     } else if (type.equals("new")) {
                         binding.headlyaout.productCatName.setText(getString(R.string.new_arrival));
-                    } else {
-                        binding.headlyaout.productCatName.setText(seeAllProductsModel.data.catdata.name);
                     }
-                    allProductAdapter.notifyDataSetChanged();
+//                    else {
+//                        binding.headlyaout.productCatName.setText(seeAllProductsModel.data.catdata.name);
+//                    }
+                    allProductAdapter = new SeeAllProductAdapter(this, seeAllProductsModel.data.productList);
+                    binding.productRecyView.setAdapter(allProductAdapter);
+//                    allProductAdapter.notifyDataSetChanged();
 
                 } else {
                     binding.productRecyView.setVisibility(View.GONE);
@@ -245,17 +248,17 @@ public class SeeAllProduct extends AppCompatActivity implements WebCompleteTask,
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (parent.getId() == R.id.capcity_spinner) {
-            int poss = (int) parent.getTag();
-            arrayList.get(poss).selcted=position;
-          // allProductAdapter.notifyItemChanged(poss);
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        if (parent.getId() == R.id.capcity_spinner) {
+//            int poss = (int) parent.getTag();
+//            arrayList.get(poss).selcted=position;
+//          // allProductAdapter.notifyItemChanged(poss);
+//        }
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
 }
